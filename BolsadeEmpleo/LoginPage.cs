@@ -26,16 +26,12 @@ namespace BolsadeEmpleo
                 Text = "Logear"
             };
             logearBoton.Clicked += LogearBoton_ClickedAsync;
-            Button eliminarBoton = new Button
-            {
-                Text = "Reiniciar Datos"
-
-            };
-            eliminarBoton.Clicked += EliminarBoton_Clicked;
+            
+            
             entryUsuario = new Entry { Placeholder = "Usuario" };
             entryPass = new Entry { IsPassword = true, Placeholder = "Contraseña" };
 
-            Content = new StackLayout
+            var stack = new StackLayout
             {
                 Padding = 20,
                 Children = {
@@ -45,17 +41,14 @@ namespace BolsadeEmpleo
                     entryPass,
                     logearBoton,
                     registrarBoton
-                    //eliminarBoton
+                    
                     
                 }
             };
+            Content = new ScrollView { Content = stack };
         }
 
-        void EliminarBoton_Clicked(object sender, EventArgs e)
-        {
-
-
-        }
+       
 
 
         void RegistrarBoton_Clicked(object sender, EventArgs e)
