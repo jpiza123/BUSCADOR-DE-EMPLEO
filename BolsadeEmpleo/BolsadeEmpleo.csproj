@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="EmptyEnumeration.cs" />
+    <Compile Remove="MyPage.xaml.cs" />
+    <Compile Remove="DataBase\DataRepository.cs" />
+    <Compile Remove="DataBase\DataRespository.cs" />
+    <Compile Remove="Entidades\EmptyClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="mainIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MyPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
